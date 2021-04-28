@@ -5,7 +5,7 @@ import netifaces as ni
 import urllib
 
 IF_NAME = "eth0"
-ELASTIC_DATA_DIR = "/mnt/data/elastic/"
+ELASTIC_DATA_DIR = "/opt/elastic/"
 
 def get_ip_address(ifname):
     return ni.ifaddresses(ifname)[ni.AF_INET][0]['addr']
