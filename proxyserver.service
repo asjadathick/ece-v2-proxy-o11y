@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn instance to serve proxy server
+After=network.target
+
+[Service]
+User=root
+Group=root
+
+
+
+WorkingDirectory=/home/asjadathick/proxy-server
+ExecStart=/usr/local/bin/gunicorn --bind 0.0.0.0:9990 wsgi:api
+
+
+[Install]
+WantedBy=multi-user.target

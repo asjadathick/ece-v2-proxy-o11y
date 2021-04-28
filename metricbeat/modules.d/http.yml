@@ -1,0 +1,34 @@
+# Module: http
+# Docs: https://www.elastic.co/guide/en/beats/metricbeat/7.x/metricbeat-module-http.html
+
+- module: http
+  metricsets:
+    - json
+  period: 10s
+  hosts: ["localhost:9990"]
+  namespace: "proxy.health"
+  path: "/health"
+
+- module: http
+  metricsets:
+    - json
+  period: 10s
+  hosts: ["localhost:9990"]
+  namespace: "proxy.maintenance"
+  path: "/maintenance"
+
+- module: http
+  metricsets:
+    - json
+  period: 10s
+  hosts: ["localhost:9990"]
+  namespace: "proxy.stats"
+  path: "/stats"
+
+- module: http
+  metricsets:
+    - json
+  period: 10s
+  hosts: ["localhost:9990"]
+  namespace: "proxy.connections"
+  path: "/connections"
